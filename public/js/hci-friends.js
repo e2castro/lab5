@@ -3,13 +3,19 @@
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializePage();
+	$(".friend").click(changeName);
 })
+
+
+
 
 /*
  * Function that is called when the document is ready.
  */
 function initializePage() {
 	console.log("Javascript connected!");
+
+
 }
 
 function anagrammedName(name) {
@@ -44,3 +50,11 @@ function anagrammedName(name) {
 		return name;
 	}
 }
+
+function changeName(e){
+	e.preventDefault();
+	var n = $(this).find("h3");
+	n.text(anagrammedName(n.text()));
+}
+
+
